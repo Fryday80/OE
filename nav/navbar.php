@@ -45,8 +45,8 @@
 					if ($this->s1 == '1' || $this->s1 == '2'){
 						$this->subCount = 0;
 						$navResult .= $this->link_mainActive($mainEntry);
-						$navResult .= ($this->s2 == '1')?$this->link_subActive($mainEntry['sub'][$this->subCount]):$this->link_subInactive($mainEntry['sub'][$this->subCount]);
-						$navResult .= ($this->s2 == '2')?$this->link_subActive($mainEntry['sub'][$this->subCount]):$this->link_subInactive($mainEntry['sub'][$this->subCount]);
+						$navResult .= ($this->s1 == '1')?$this->link_subActive($mainEntry['sub'][$this->subCount]):$this->link_subInactive($mainEntry['sub'][$this->subCount]);
+						$navResult .= ($this->s1 == '2')?$this->link_subActive($mainEntry['sub'][$this->subCount]):$this->link_subInactive($mainEntry['sub'][$this->subCount]);
 					}
 					else {
 						$navResult .= $this->link_mainInactive($mainEntry);
