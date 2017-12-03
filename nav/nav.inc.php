@@ -16,14 +16,7 @@
 // Design untescheidet in mainnavi & mainnaviaktive und subnavi & subnaviaktiv
 // �ber $s2 entsprechend f�r das 2. Klappmen�, hier mit 4 F�llen... (default + 3 Sonderf�lle; s.o.)
 
-// setzen des Content Pfads
-$pathc = "./parts/content/";
-// setzen des Basic Elements Pfads
-$pathb = "./parts/base/";
-// Variable für navileiste
-$navbar = "./nav/navbar.php";
-
-         if(isset($_GET['site'])) {
+	if(isset($_GET['site'])) {
                  $n = $_GET['site'];   // übergibt den ?site parameter (steht in .htaccess !!) an $n
          // switch-funktion um $s1 bzw. $s2 zu definieren für die Untermenüs
                  switch($n) {
@@ -50,12 +43,14 @@ $navbar = "./nav/navbar.php";
                       * d.h. kein Submenü ist aufgeklappt
                       **/
                      default:
-
+						 $s1 = null;
+						 $s2 = null;
                      break;
                   }
-} else {
-   $n = 'profil'; // Ziel wenn nichts gesetzt wird bzw. /site.php direkt aufgerufen wird
-   //$n = 'wellcome';
-}
 
-?>
+	} else {
+		$n = 'profil'; // Ziel wenn nichts gesetzt wird bzw. /site.php direkt aufgerufen wird
+   		//$n = 'wellcome';
+		$s1 = null;
+		$s2 = null;
+	}
