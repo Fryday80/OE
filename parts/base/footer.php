@@ -1,0 +1,1 @@
+<div class="footer">Copyright 2007 Odeon - Ensemble M&uuml;nchen     <a class="footer" href="mailto:info@odeon-ensemble-muenchen.de">info@odeon-ensemble-muenchen.de </a></div>

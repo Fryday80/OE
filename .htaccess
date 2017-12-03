@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteRule ^Profil /site.php?site=profil
+RewriteRule ^Aktuelles /site.php?site=aktuelles
+RewriteRule ^Vorverkauf /site.php?site=vorverkauf
+RewriteRule ^DDr.Hartmann /site.php?site=hartmann
+RewriteRule ^Kontakt /site.php?site=kontakt
+RewriteRule ^Media /site.php?site=media
+RewriteRule ^Archiv([0-9]) /site.php?site=archiv&a=$1
+RewriteRule ^Archiv /site.php?site=archiv
+RewriteRule ^Proben /site.php?site=proben
+RewriteRule ^DVD /site.php?site=dvd
+RewriteRule ^Impressum /site.php?site=impressum
