@@ -11,6 +11,7 @@ class Entry
     public $timestamp;
 
     private $dateString;
+    private $imagesDir = "/images/Konzerte/";
 
     public function __construct($year)
     {
@@ -20,11 +21,11 @@ class Entry
     public function getHTML()
     {
         $this->refactorData();
-        $return = "";
+        $return = "<div class='entry' style='min-height: 160px;'>";
 		if ($this->hasPic()) $return .= $this->showPic();
         $return  .= "<h2><strong>$this->dateString<br/>";
         $return .= $this->title . ", $this->place</strong></h2><br/>";
-        $return .= $this->information . "<br/><br/><br/>";
+        $return .= $this->information . "<br/><br/><br/></div>";
         return $return;
     }
 
@@ -34,10 +35,14 @@ class Entry
     }
 
     public function setPicture($path){
-    	if( file_exists(getcwd() . $path)){
-			$this->picPath = $path;
+    	if (!($path === null)){
+			if( file_exists(getcwd() . $path)){
+				$this->picPath = $path;
+				return;
+			}
 		}
-		else $this->picPath = null;
+		$this->picPath = null;
+    	return;
 	}
 
 	public function hasPic(){
@@ -46,11 +51,26 @@ class Entry
 	}
 
 	public function showPic() {
-		return "<img src='$this->picPath' alt='img' style='height: 150px; '>";
+		return "<img src='$this->picPath' alt='img' style='height: 150px; float: right;'>";
 	}
 
     private function refactorData()
     {
+    	if ($this->picPath === null){
+			$parts = explode(".", $this->date);
+			if (count($parts) === 3){
+				$invertDate = $parts[2] . '.' . sprintf('%02d', $parts[1]) . '.' . sprintf('%02d', $parts[0]);
+				if( file_exists(getcwd() . $this->imagesDir . $invertDate . '.jpg')){
+					$this->picPath = $this->imagesDir . $invertDate . '.jpg';
+				}
+				if( file_exists(getcwd() . $this->imagesDir . $invertDate . '.jpeg')){
+					$this->picPath = $this->imagesDir . $invertDate . '.jpeg';
+				}
+				if( file_exists(getcwd() . $this->imagesDir . $invertDate . '.png')){
+					$this->picPath = $this->imagesDir . $invertDate . '.png';
+				}
+			}
+		}
         $dayNumber = (int)date('N', $this->timestamp);
         $day = date('d. ', $this->timestamp);
         $month = (int)date('m', $this->timestamp);
