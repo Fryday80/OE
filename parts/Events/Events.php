@@ -22,7 +22,6 @@ Bei dem berühmten Doppelkonzert für 2 Trompeten von Antonio Vivaldi können di
 Als Hommage an den dritten großen deutschen Komponisten der Barockzeit, Georg Philipp Telemann, der zu Unrecht im Schatten von Bach und Händel steht,  erklingen aus  den Marches héroiques die Sätze: Die Anmut/Die Liebe/Die Ausgelassenheit/Die Freude.<br/>
 Die große Farb-Palette der Bürgersaalorgel entfaltet sich schließlich in den berühmten Toccaten der Pariser Orgelmeister Théodore Dubois und Charles Marie Widor.<br/>
 Die Leitung des Konzertes sowie der Orgelpart liegen bei Michael Hartmann, dem Musikdirektor der Bürgersaalkirche und Münchner Orgelprofessor. Mit ihm musizieren die Münchner Bläsersolisten.';
-
 $entry->setPicture("/images/Silvester_2017.jpg");
 $allEvents[$entry->getTimestamp()] = $entry;
 
@@ -173,6 +172,15 @@ $entry->information = ' Werke von Mendelssohn, Fauré, Piazolla <br>
                         Michael Hartmann, Orgel <br>
                         Werke von Lefebure-Wely';
 $allEvents[$entry->getTimestamp()] = $entry;
+
+// ================================================================= 2011
+	$entry = new Entry(2011);
+	$entry->date = '17.07.2011';
+	$entry->time = '16:00';
+	$entry->title = 'Rossini - Petit Messe Solennelle';
+	$entry->place = 'Klosterkirche Schäftlarn';
+	$allEvents[$entry->getTimestamp()] = $entry;
+
 
 //ksort($allEvents);
 krsort($allEvents);
